@@ -1,0 +1,40 @@
+/* Bootstrap 3 RC 2 patches */
+
+.navbar-form {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Application styles */
+
+body {
+  padding-top: 72px;
+}
+
+.gnm-navbar {
+  background-color: #563d7c;
+}
+
+.gnm-search-input {
+  border-color: #cdbfe3;
+}
+
+.gnm-search-btn {
+  background-color: #563d7c;
+  border-color: #cdbfe3;
+  border-left: 0;
+  color: #cdbfe3;
+}
+
+.gnm-search-btn:hover {
+  background-color: #fff;
+  color: #563d7c;
+}
+
+.gnm-row {
+  margin-bottom: 14px;
+  margin-top: 7px;
+}
