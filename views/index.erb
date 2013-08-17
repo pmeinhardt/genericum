@@ -6,12 +6,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/app.css">
 
-    <script src="javascripts/jquery.min.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
-    <script src="javascripts/angular.min.js"></script>
+    <script src="javascripts/vendor/jquery.min.js"></script>
+    <script src="javascripts/vendor/bootstrap.min.js"></script>
+    <script src="javascripts/vendor/angular.min.js"></script>
 
     <script src="javascripts/app.js"></script>
     <script src="javascripts/services.js"></script>
@@ -23,7 +23,7 @@
   <body>
     <div class="container">
       <nav class="navbar navbar-inverse navbar-fixed-top gnm-navbar">
-        <div class="container" ng-controller="SearchController">
+        <div ng-controller="SearchController">
           <div class="col-xs-12 col-sm-12">
             <form name="SearchForm" class="navbar-form search-form" ng-submit="submit()">
               <div class="input-group">
