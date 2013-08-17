@@ -39,6 +39,22 @@ end
   original.enhance([:environment])
 end
 
+# Tasks to help with development.
+
+namespace :code do
+  desc "Run JSHint on JavaScript code"
+  task :jshint do
+    available = system("which -s jshint")
+    site = "http://jshint.com/install"
+
+    abort("Install JSHint: #{site}") unless available
+
+    stdout = `jshint .`
+
+    abort(stdout) unless $?.success?
+  end
+end
+
 # Test-related tasks.
 
 RSpec::Core::RakeTask.new(:spec)

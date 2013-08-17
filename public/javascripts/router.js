@@ -1,24 +1,26 @@
-var module = angular.module('app.router', []);
+(function() {
+  var module = angular.module('app.router', []);
 
-module.config(function($routeProvider) {
-  var router = $routeProvider;
+  module.config(function($routeProvider) {
+    var router = $routeProvider;
 
-  router.when('/', { templateUrl: '/home' });
+    router.when('/', { templateUrl: '/home' });
 
-  router.when('/search', {
-    templateUrl: '/results',
-    controller: 'ResultsController'
+    router.when('/search', {
+      templateUrl: '/results',
+      controller: 'ResultsController'
+    });
+
+    router.when('/drugs/:id', {
+      templateUrl: '/drug',
+      controller: 'DrugController'
+    });
+
+    router.when('/substances/:id', {
+      templateUrl: '/substance',
+      controller: 'SubstanceController'
+    });
+
+    router.otherwise({ redirectTo: '/' });
   });
-
-  router.when('/drugs/:id', {
-    templateUrl: '/drug',
-    controller: 'DrugController'
-  });
-
-  router.when('/substances/:id', {
-    templateUrl: '/substance',
-    controller: 'SubstanceController'
-  });
-
-  router.otherwise({ redirectTo: '/' });
-});
+})();

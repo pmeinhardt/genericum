@@ -1,1 +1,3 @@
-var module = angular.module('app.filters', []);
+(function() {
+  var module = angular.module('app.filters', []);
+})();

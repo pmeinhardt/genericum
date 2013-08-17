@@ -1,1 +1,3 @@
-var module = angular.module('app.services', []);
+(function() {
+  var module = angular.module('app.services', []);
+})();
