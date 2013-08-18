@@ -53,6 +53,23 @@ namespace :code do
 
     abort(stdout) unless $?.success?
   end
+
+  desc "Run RECESS on CSS code"
+  task :csshint do
+    available = system("which -s recess")
+    site = "http://twitter.github.io/recess/"
+
+    abort("Install RECESS: #{site}") unless available
+
+    stdout = `recess public/stylesheets/*.css`
+
+    # unfortunately RECESS does not exit with a non-zero code on errors
+    failed = stdout.include?("FAILURES")
+    failed ||= stdout.include?("Parse error")
+    failed ||= stdout.include?("Parser error")
+
+    abort(stdout) if failed
+  end
 end
 
 # Test-related tasks.
