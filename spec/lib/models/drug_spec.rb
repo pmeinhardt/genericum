@@ -8,6 +8,16 @@ describe Drug do
     end
   end
 
+  describe "#substances" do
+    subject { Fabricate(:drug) }
+    let(:substance) { Fabricate(:substance) }
+
+    it "are distinct" do
+      2.times { subject.substances << substance }
+      subject.substances.count.should == 1
+    end
+  end
+
   describe ".search" do
     let(:query) { "para" }
 

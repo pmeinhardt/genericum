@@ -1,7 +1,7 @@
 class Drug < ActiveRecord::Base
   # attributes: name, form, manufacturer, distribution, info
 
-  has_and_belongs_to_many :substances
+  has_and_belongs_to_many :substances, -> { distinct }
 
   validates :name, presence: true, uniqueness: true
 
